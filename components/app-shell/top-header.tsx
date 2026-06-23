@@ -11,9 +11,14 @@ export function TopHeader() {
   const { name, roleLabel } = useCurrentUser();
   const [isSearchFocused, setIsSearchFocused] = useState(false);
 
-  const pageTitle = pathname === "/dashboard" 
-    ? "Dashboard Overview" 
-    : pathname.split("/").pop()?.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ") || "Dashboard";
+  let pageTitle = "Dashboard";
+  if (pathname === "/dashboard") {
+    pageTitle = "Dashboard Overview";
+  } else if (pathname === "/dashboard/full") {
+    pageTitle = "Full Dashboard";
+  } else {
+    pageTitle = pathname.split("/").pop()?.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ") || "Dashboard";
+  }
 
   return (
     <header className="shrink-0 h-14 bg-surface shadow-sm border-b border-border-soft flex justify-between items-center px-md z-40">

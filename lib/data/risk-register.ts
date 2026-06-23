@@ -109,3 +109,13 @@ export function getRiskRatingBadgeStyle(rating: RiskRating): string {
   };
   return map[rating];
 }
+
+export function getRiskRatingSolidColor(rating: RiskRating): string {
+  const map: Record<RiskRating, string> = {
+    Low: "bg-[#2E9E5B] text-white",
+    Medium: "bg-[#E5B400] text-white",
+    High: "bg-[#E67A1F] text-white",
+    "Very High": "bg-[#D33A3A] text-white",
+  };
+  return map[rating];
+}

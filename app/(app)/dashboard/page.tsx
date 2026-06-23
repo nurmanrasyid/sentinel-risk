@@ -3,6 +3,7 @@
 import { useCurrentUser } from "@/lib/context/user-context";
 import { mockRiskRegister, mockKpiSummary, getStatusBadgeStyle, getRiskRatingBadgeStyle } from "@/lib/data/risk-register";
 import { toast } from "sonner";
+import Link from "next/link";
 
 export default function DashboardPage() {
   const { name } = useCurrentUser();
@@ -29,12 +30,12 @@ export default function DashboardPage() {
                                 Continue Assessment
                                 <span className="material-symbols-outlined ml-1 text-[16px]">arrow_forward</span>
                             </button>
-                            <button 
-                                onClick={() => handleComingSoon("View Reports")}
-                                className="border border-secondary text-secondary px-sm py-1 rounded-lg text-[12px] font-semibold hover:bg-secondary-container/20 transition-all"
+                            <Link 
+                                href="/dashboard/full"
+                                className="border border-secondary text-secondary px-sm py-1 rounded-lg text-[12px] font-semibold hover:bg-secondary-container/20 transition-all flex items-center"
                             >
-                                View Reports
-                            </button>
+                                View Full Dashboard
+                            </Link>
                         </div>
                     </div>
                     <div className="absolute -right-16 -bottom-16 w-64 h-64 bg-secondary opacity-5 rounded-full blur-3xl"></div>
