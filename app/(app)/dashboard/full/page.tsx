@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { 
   Download, 
   Plus, 
@@ -192,9 +193,12 @@ export default function FullDashboardPage() {
       <div className="bg-white rounded-lg border border-border-soft overflow-hidden">
         <div className="p-sm border-b border-border-soft flex justify-between items-center bg-surface-bright">
           <h2 className="text-sm font-semibold text-[#0B2A4A]">Top 5 Residual Risks</h2>
-          <button className="text-on-surface-variant hover:text-text-primary">
-            <ListFilter className="w-4 h-4" />
-          </button>
+          <div className="flex items-center space-x-2">
+            <span className="text-xs text-on-surface-variant italic">Showing highest residual impact items</span>
+            <button className="text-[#0B2A4A] hover:opacity-80 transition-opacity">
+              <ListFilter className="w-4 h-4" />
+            </button>
+          </div>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm whitespace-nowrap">
@@ -244,6 +248,11 @@ export default function FullDashboardPage() {
               })}
             </tbody>
           </table>
+        </div>
+        <div className="p-3 text-center border-t border-border-soft">
+          <Link href="/risk-register" className="text-sm text-[#0E7C86] hover:underline">
+            View All Risk Register Items
+          </Link>
         </div>
       </div>
 

@@ -15,6 +15,13 @@ export default function AppLayout({
         <main className="flex-1 overflow-hidden flex flex-col min-h-0 bg-surface-bg">
           {children}
         </main>
+        <footer className="shrink-0 px-md py-1.5 bg-white border-t border-border-soft flex justify-between items-center text-[10px] uppercase tracking-widest font-bold text-on-surface-variant/40">
+          <div className="flex gap-md">
+            <span>System Status: Optimal</span>
+            <span>Last Compliance Sync: 45m ago</span>
+          </div>
+          <div>© 2024 SentinelRisk Precision Governance</div>
+        </footer>
       </div>
     </UserProvider>
   );

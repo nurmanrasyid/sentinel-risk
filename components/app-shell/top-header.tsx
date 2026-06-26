@@ -23,13 +23,12 @@ export function TopHeader() {
   return (
     <header className="shrink-0 h-14 bg-surface shadow-sm border-b border-border-soft flex justify-between items-center px-md z-40">
         <div className="flex items-center space-x-sm">
-            <div className="flex flex-col">
-                <nav className="flex items-center text-on-surface-variant text-[11px] mb-0.5">
+            <div className="flex flex-col justify-center">
+                <nav className="flex items-center text-on-surface-variant text-[11px]">
                     <span className="">Home</span>
                     <span className="material-symbols-outlined text-[14px] mx-0.5">chevron_right</span>
                     <span className="text-secondary font-semibold">{pathname === "/dashboard" ? "Dashboard" : pageTitle}</span>
                 </nav>
-                <h1 className="font-headline-md text-[18px] text-on-surface leading-none">{pageTitle}</h1>
             </div>
         </div>
         
@@ -46,13 +45,15 @@ export function TopHeader() {
             </div>
             
             <div className="flex items-center space-x-sm">
-                <button 
-                  onClick={() => toast.info("Full Dashboard is coming soon!")}
-                  className="flex items-center space-x-1 border border-secondary text-secondary px-2 py-1 rounded-lg text-[12px] font-semibold hover:bg-secondary-container/20 transition-all"
-                >
-                    <span className="material-symbols-outlined text-[16px]">dashboard_customize</span>
-                    <span className="">View Full Dashboard</span>
-                </button>
+                {pathname !== "/dashboard/full" && (
+                  <button 
+                    onClick={() => router.push("/dashboard/full")}
+                    className="flex items-center space-x-1 border border-secondary text-secondary px-2 py-1 rounded-lg text-[12px] font-semibold hover:bg-secondary-container/20 transition-all"
+                  >
+                      <span className="material-symbols-outlined text-[16px]">dashboard_customize</span>
+                      <span className="">View Full Dashboard</span>
+                  </button>
+                )}
                 <button className="relative hover:bg-surface-container-low p-1.5 rounded-full transition-colors">
                     <span className="material-symbols-outlined text-on-surface-variant text-[20px]">notifications</span>
                     <span className="absolute top-1 right-1 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>

@@ -8,7 +8,7 @@ export interface MockUser {
 
 // Hardcoded untuk testing App Shell — belum nyambung ke hasil mockLogin
 export const mockCurrentUser: MockUser = {
-  name: "Ahmad Rasyid",
+  name: "RPH - Nurman Rasyid P H",
   roleLabel: "IT Risk Officer",
   roleCategory: "contributor",
 };
